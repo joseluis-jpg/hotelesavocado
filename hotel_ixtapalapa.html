@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Ixtapalapa - Detalles</title>
+    <link rel="icon" type="image" href="logo.jpg">
+    <link rel="stylesheet" href="habi.css">
+</head>
+<body>
+    <header>
+        <div class="left-section">
+            <img src="logo.jpg" alt="Logo de la página" id="logo">
+            <h1>Hoteles Avocado</h1>
+        </div>
+        <div class="right-section">
+            <nav>
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="hoteles.html">Hoteles</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="hotel-info">
+            <h2>Hotel Ixtapalapa</h2>
+            <p>Ubicado en una de las zonas más exclusivas, nuestro hotel ofrece una experiencia única.</p>
+        </section>
+
+        <section id="search-container">
+            <input type="text" id="room-search" placeholder="Busca tu habitación por tipo..." oninput="searchRoom('ixtapalapa')">
+        </section>
+
+        <section id="rooms-container">
+            <div class="room" data-name="suite" data-available="true">
+                <h3>Suite Presidencial</h3>
+                <img src="suite_presidencial.jpg" alt="Suite Presidencial" class="room-image">
+                <p class="description">Lujosa suite con vista panorámica, jacuzzi y servicio 5 estrellas.</p>
+                <p class="availability">Disponible: <span class="available">Sí</span></p>
+                <button class="reserve-btn" onclick="reserveRoom(this)">Apartar</button>
+            </div>
+            <div class="room" data-name="estandar" data-available="false">
+                <h3>Habitación Estándar</h3>
+                <img src="habitacion_estandar.jpg" alt="Habitación Estándar" class="room-image">
+                <p class="description">Cómoda habitación con todas las comodidades esenciales.</p>
+                <p class="availability">Disponible: <span class="not-available">No</span></p>
+                <button class="reserve-btn" disabled>Apartar</button>
+            </div>
+            <div class="room" data-name="suite" data-available="true">
+                <h3>Suite Familiar</h3>
+                <img src="suite_familiar.jpg" alt="Suite Familiar" class="room-image">
+                <p class="description">Habitación ideal para familias, con 2 camas dobles y vista al jardín.</p>
+                <p class="availability">Disponible: <span class="available">Sí</span></p>
+                <button class="reserve-btn" onclick="reserveRoom(this)">Apartar</button>
+            </div>
+            <div class="room" data-name="doble" data-available="true">
+                <h3>Habitación Doble</h3>
+                <img src="habitacion_doble.jpg" alt="Habitación Doble" class="room-image">
+                <p class="description">Habitación doble con cómodas camas y vista al patio central.</p>
+                <p class="availability">Disponible: <span class="available">Sí</span></p>
+                <button class="reserve-btn" onclick="reserveRoom(this)">Apartar</button>
+            </div>
+            <div class="room" data-name="suite" data-available="false">
+                <h3>Suite Junior</h3>
+                <img src="suite_junior.jpg" alt="Suite Junior" class="room-image">
+                <p class="description">Suite pequeña con salón privado y acceso al spa.</p>
+                <p class="availability">Disponible: <span class="not-available">No</span></p>
+                <button class="reserve-btn" disabled>Apartar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+        <img src="logo.jpg" alt="Logo de la página" id="logo">
+        <p>&copy; 2024 Hoteles Avocado. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function searchRoom(hotel) {
+            const searchTerm = document.getElementById('room-search').value.toLowerCase();
+            const rooms = document.querySelectorAll('#rooms-container .room');
+
+            rooms.forEach(room => {
+                const roomType = room.getAttribute('data-name').toLowerCase();
+                if (roomType.includes(searchTerm)) {
+                    room.style.display = 'block';
+                } else {
+                    room.style.display = 'none';
+                }
+            });
+        }
+
+        function reserveRoom(button) {
+            const room = button.closest('.room');
+            const isAvailable = room.getAttribute('data-available') === 'true';
+            
+            if (isAvailable) {
+                alert("¡Reserva confirmada!");
+                room.setAttribute('data-available', 'false');
+                room.querySelector('.availability .available').textContent = 'No';
+                button.disabled = true;
+            } else {
+                alert("La habitación no está disponible.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+/* Estilo base para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e6f4ea, #f9f9f9);
+    color: #333;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Estilo para el encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #006400;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideInDown 1s ease-out;
+}
+
+header .left-section {
+    display: flex;
+    align-items: center;
+    background-color: #4CAF50; /* Color verde más claro */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+header .left-section #logo,
+footer #logo:hover {
+    width: 80px;
+    border-radius: 5px;
+    height: auto;
+    margin-right: 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+footer img {
+    width: 80px;
+}
+
+header .left-section #logo:hover,
+footer #logo:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+header .left-section h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    animation: fadeIn 1.5s ease-in;
+}
+
+header .right-section {
+    flex-grow: 1;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(to right, #e6f4ea, #f9f9f9);
+    color: #006400;
+    animation: fadeIn 2s ease-in;
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+#hero .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#hero .cta-button:hover {
+    background-color: #b20000;
+    transform: scale(1.1);
+}
+
+/* Estilo para el contenedor de búsqueda de hoteles */
+#search-container {
+    text-align: center;
+    margin: 20px;
+}
+
+#hotel-search {
+    padding: 10px;
+    width: 60%;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Estilo para los hoteles */
+#hotels-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.hotel {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.hotel:hover {
+    transform: scale(1.05);
+}
+
+.hotel h3 {
+    font-size: 1.8rem;
+    color: #006400;
+    margin-bottom: 10px;
+}
+
+.hotel .rating {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.hotel .description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Estilo para la imagen de cada hotel */
+.hotel-image {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Enlace "Ver más" */
+.view-more {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #006400;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.view-more:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #006400;
+    color: #fff;
+    padding: 30px 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-family: 'Arial', sans-serif;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer .social-media a { 
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s, box-shadow 0.3s, text-shadow 0.3s;
+    position: relative; 
+}
+
+footer .social-media a:hover {
+    color: #174618;
+    transform: scale(1.1) rotate(5deg);
+    text-shadow: 0 0 10px rgba(28, 182, 33, 0.8); 
+    box-shadow: 0 0 15px rgba(3, 98, 3, 0.6); 
+}
+
+/* Animations */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

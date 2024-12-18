@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles Avocado - Hoteles</title>
+    <link rel="icon" type="image" href="logo.jpg">
+    <link rel="stylesheet" href="stylehoteles.css">
+</head>
+<body>
+    <header>
+        <div class="left-section">
+            <img src="logo.jpg" alt="Logo de la página" id="logo">
+            <h1>Hoteles Avocado</h1>
+        </div>
+        <div class="right-section">
+            <nav>
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="hoteles.html">Hoteles</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="hero">
+            <h2>Descubre nuestros Hoteles</h2>
+            <p>Conoce los hoteles más exclusivos y disfruta de una experiencia única.</p>
+        </section>
+        <section id="search-container">
+            <input type="text" id="hotel-search" placeholder="Busca tu hotel..." oninput="searchHotel()">
+        </section>
+        <section id="hotels-container">
+            <div class="hotel" data-name="Hotel Merida">
+                <img src="hotel_merida.jpg" alt="Hotel Merida" class="hotel-image">
+                <h3>Hotel Merida</h3>
+                <p class="rating">⭐️⭐️⭐️⭐️ (4/5)</p>
+                <p class="description">Ubicado en el corazón de la ciudad de Cancún, Hotel Merida ofrece cómodas habitaciones, spa, restaurante y más servicios, asi como aceso a la playa.</p>
+                <a href="hotel_merida.html" class="view-more">Ver más</a>
+            </div>
+            <div class="hotel" data-name="Hotel Ixtapalapa">
+                <img src="hotel_ixtapalapa.jpg" alt="Hotel Ixtapalapa" class="hotel-image">
+                <h3>Hotel Ixtapalapa</h3>
+                <p class="rating">⭐️⭐️⭐️⭐️⭐️ (5/5)</p>
+                <p class="description">Hotel Ixtapalapa es perfecto para quienes buscan lujo y comodidad, con vistas impresionantes y servicio de primera.</p>
+                <a href="hotel_ixtapalapa.html" class="view-more">Ver más</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+        <img src="logo.jpg" alt="Logo de la página" id="logo">
+        <p>&copy; 2024 Hoteles Avocado. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para buscar hoteles
+        function searchHotel() {
+            const searchTerm = document.getElementById('hotel-search').value.toLowerCase();
+            const hotels = document.querySelectorAll('.hotel');
+
+            hotels.forEach(hotel => {
+                const hotelName = hotel.getAttribute('data-name').toLowerCase();
+                if (hotelName.includes(searchTerm)) {
+                    hotel.style.display = 'block';
+                } else {
+                    hotel.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

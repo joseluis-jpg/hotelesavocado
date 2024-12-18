@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles Avocado - Servicios</title>
+    <link rel="icon" type="image/png" href="logo.jpg">
+    <link rel="stylesheet" href="styleservicios.css">
+</head>
+<body>
+    <header>
+        <div class="left-section">
+            <img src="logo.jpg" alt="Logo de la página" id="logo">
+            <h1>Hoteles Avocado</h1>
+        </div>
+        <div class="right-section">
+            <nav>
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="servicios.html" class="active">Servicios</a></li>
+                    <li><a href="hoteles.html">Hoteles</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="hero">
+            <h2>Nuestros Servicios</h2>
+            <p>Descubre todo lo que tenemos para ofrecerte para que tu estadía sea inolvidable.</p>
+        </section>
+        
+        <section id="carousel">
+            <h3>Explora nuestros servicios</h3>
+            <div class="carousel-container">
+                <div class="carousel-inner">
+                    <div class="carousel-slide">
+                        <img src="servicio1.jpg" alt="Servicio 1">
+                        <p>Relájate en nuestro spa de lujo con tratamientos exclusivos.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="servicio2.jpg" alt="Servicio 2">
+                        <p>Disfruta de una gastronomía única en nuestros restaurantes de clase mundial.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="servicio3.jpg" alt="Servicio 3">
+                        <p>Acceso a piscinas exclusivas con vistas espectaculares.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="servicio4.jpg" alt="Servicio 4">
+                        <p>Organiza eventos inolvidables con nuestro servicio de salón de conferencias.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </section>
+        
+    </main>
+    
+    <footer>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+        <img src="logo.jpg" alt="Logo de la página" id="logo">
+        <p>&copy; 2024 Hoteles Avocado. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script>
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const carouselInner = document.querySelector('.carousel-inner');
+    let currentIndex = 0;
+
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+
+    // Función para mostrar la imagen anterior
+    function showPrevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalSlides - 1;
+        }
+        updateCarousel();
+    }
+
+    // Función para mostrar la imagen siguiente
+    function showNextSlide() {
+        if (currentIndex < totalSlides - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateCarousel();
+    }
+
+    // Función para actualizar el carrusel
+    function updateCarousel() {
+        const offset = -currentIndex * 100; // Desplaza el carrusel
+        carouselInner.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevButton.addEventListener('click', showPrevSlide);
+    nextButton.addEventListener('click', showNextSlide);
+</script>
+
+</body>
+</html>
